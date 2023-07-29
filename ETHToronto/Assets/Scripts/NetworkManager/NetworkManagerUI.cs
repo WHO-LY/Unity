@@ -10,17 +10,24 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField] private Button hostBtn;
     [SerializeField] private Button clientBtn;
 
+    [SerializeField] private GameObject mainCam;
+
+
     private void Awake() {
         serverBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartServer();
+            mainCam.SetActive(false);
+
         });
         hostBtn.onClick.AddListener(() => {
-            Debug.Log("Hello");
             NetworkManager.Singleton.StartHost();
+            mainCam.SetActive(false);
+
         });
         clientBtn.onClick.AddListener(() => {
-            Debug.Log("Hello1");
             NetworkManager.Singleton.StartClient();
+            mainCam.SetActive(false);
+
         });
     }
 }
