@@ -34,7 +34,7 @@ public class DialogManager : MonoBehaviour
 
     }
 
-    public void Update(){
+    public void HandleUpdate(){
         if(Input.GetKeyDown(KeyCode.Z) && !isTyping){
             ++currentLine;
             if (currentLine < dialog.Lines.Count){
